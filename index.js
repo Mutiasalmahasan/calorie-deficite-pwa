@@ -615,30 +615,63 @@ function getDayWaterTotal(date) {
 // ====================================
 // NAVIGATION FUNCTIONS
 // ====================================
-function showDashboard() {
-    switchPage('dashboard');
-    updateDashboardStats();
-    updateProgressBars();
+function showDashboard(){ // Hide all content sections
+    document.getElementById('dashboardContent').classList.remove('active');
+    document.getElementById('analyticsContent').classList.remove('active');
+    document.getElementById('harianContent').classList.remove('active');
     
-    // Initialize or update daily summary chart
-    setTimeout(() => {
-        createDailySummaryChart();
-    }, 100);
+    // Show dashboard content
+    document.getElementById('dashboardContent').classList.add('active');
+    
+    // Update navbar links
+    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+    document.getElementById('nav-dashboard').classList.add('active');
+    
+    // Update bottom nav (untuk mobile)
+    document.querySelectorAll('.bottom-nav-item').forEach(item => item.classList.remove('active'));
+    document.getElementById('bottom-nav-dashboard').classList.add('active');
+    
+    // Load dashboard data
+    loadDashboardData();
 }
-
 function showAnalytics() {
-    switchPage('analytics');
-    initializeAnalytics();
+     document.getElementById('dashboardContent').classList.remove('active');
+    document.getElementById('analyticsContent').classList.remove('active');
+    document.getElementById('harianContent').classList.remove('active');
     
-    // Initialize all charts with delay to ensure elements are rendered
-    setTimeout(() => {
-        initializeCharts();
-    }, 100);
+    // Show analytics content
+    document.getElementById('analyticsContent').classList.add('active');
+    
+    // Update navbar links
+    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+    document.getElementById('nav-analytics').classList.add('active');
+    
+    // Update bottom nav (untuk mobile)
+    document.querySelectorAll('.bottom-nav-item').forEach(item => item.classList.remove('active'));
+    document.getElementById('bottom-nav-analytics').classList.add('active');
+    
+    // Load analytics
+    loadAnalyticsData();
 }
 
 function showHarian() {
-    switchPage('harian');
-    updateHarianSummary();
+    switchPage('harian');document.getElementById('dashboardContent').classList.remove('active');
+    document.getElementById('analyticsContent').classList.remove('active');
+    document.getElementById('harianContent').classList.remove('active');
+    
+    // Show harian content
+    document.getElementById('harianContent').classList.add('active');
+    
+    // Update navbar links
+    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+    document.getElementById('nav-harian').classList.add('active');
+    
+    // Update bottom nav (untuk mobile)
+    document.querySelectorAll('.bottom-nav-item').forEach(item => item.classList.remove('active'));
+    document.getElementById('bottom-nav-harian').classList.add('active');
+    
+    // Load harian summary
+    loadHarianSummary();
 }
 
 function switchPage(page) {

@@ -1625,3 +1625,292 @@ body {
     margin: 10px 0;
     animation: slideDown 0.3s ease;
 }
+/* ========================================
+   RESPONSIVE MOBILE OPTIMIZATION
+   Tambahkan di bagian paling bawah index.css
+   ======================================== */
+
+/* Mobile Responsive - Max Width 768px */
+@media only screen and (max-width: 768px) {
+    
+    /* Body & Container Adjustments */
+    body {
+        font-size: 14px;
+        padding-bottom: 70px; /* Space for bottom nav */
+    }
+
+    .container {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    /* Header/Navbar Mobile Optimization */
+    .navbar {
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-logo {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        display: none; /* Hide di navbar, pindah ke bottom nav */
+    }
+
+    .nav-actions {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .user-info {
+        font-size: 12px;
+        max-width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Bottom Navigation */
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+
+    .bottom-nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        padding: 8px 15px;
+        text-decoration: none;
+        color: #64748b;
+        font-size: 12px;
+        border-radius: 8px;
+        transition: all 0.3s;
+    }
+
+    .bottom-nav-item.active {
+        background: #eff6ff;
+        color: #3b82f6;
+    }
+
+    .bottom-nav-item svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Dashboard Cards - Mobile Grid */
+    .features-grid {
+        grid-template-columns: 1fr; /* 1 column di mobile */
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .feature-card {
+        padding: 20px;
+    }
+
+    .feature-icon {
+        font-size: 40px;
+    }
+
+    /* Quick Stats - Stack Vertically on Mobile */
+    .quick-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .stat-card {
+        width: 100%;
+    }
+
+    /* Analytics Grid - Single Column */
+    .analytics-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .charts-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Harian Grid - Single Column */
+    .harian-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .input-card {
+        padding: 15px;
+    }
+
+    .input-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .input-group input {
+        width: 100%;
+    }
+
+    .input-group button {
+        width: 100%;
+    }
+
+    /* Modal Adjustments */
+    .modal-content {
+        width: 95%;
+        max-width: 100%;
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .modal-large {
+        width: 95%;
+    }
+
+    /* Form Inputs */
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .input-section input,
+    .input-section select {
+        width: 100%;
+        font-size: 16px; /* Prevent iOS zoom */
+    }
+
+    /* Buttons - Full Width on Mobile */
+    .btn-primary,
+    .btn-add,
+    .btn-logout {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* Card Auth - Login/Register */
+    .card-auth {
+        padding: 20px;
+        margin: 20px 10px;
+    }
+
+    /* Chart Containers */
+    .chart-container {
+        height: 250px;
+    }
+
+    /* Hide floating icons on mobile (optional) */
+    .floating-icons {
+        display: none;
+    }
+
+    /* Summary Stats */
+    .summary-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .summary-item {
+        width: 100%;
+    }
+
+    /* Analytics Filters - Stack on Mobile */
+    .analytics-filters {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .filter-btn {
+        flex: 1 1 calc(50% - 4px);
+        min-width: 100px;
+    }
+
+    /* Overview Stats */
+    .overview-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    /* Welcome Section */
+    .welcome-section h1 {
+        font-size: 24px;
+    }
+
+    .welcome-section p {
+        font-size: 14px;
+    }
+
+    /* Header Section */
+    .header-section h1 {
+        font-size: 28px;
+    }
+
+    .header-section h2 {
+        font-size: 22px;
+    }
+
+    /* Profile Photo */
+    .user-avatar {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Adjust spacing */
+    .dashboard-content,
+    .analytics-container,
+    .harian-container {
+        padding: 15px 10px;
+    }
+}
+
+/* Extra Small Mobile - Max Width 480px */
+@media only screen and (max-width: 480px) {
+    
+    .nav-logo span {
+        display: none; /* Hide text, show only icon */
+    }
+
+    .feature-card h3 {
+        font-size: 16px;
+    }
+
+    .stat-number {
+        font-size: 28px;
+    }
+
+    .modal-content {
+        padding: 15px;
+    }
+
+    .chart-container {
+        height: 200px;
+    }
+
+    /* Bottom Nav - Smaller Icons */
+    .bottom-nav-item {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    .bottom-nav-item svg {
+        width: 20px;
+        height: 20px;
+    }
+}
