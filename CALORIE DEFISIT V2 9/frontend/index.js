@@ -2756,7 +2756,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Initialization complete');
 });
-
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+      console.log('Service Worker registered:', registration);
+    })
+    .catch(error => {
+      console.log('Service Worker registration failed:', error);
+    });
+}
 // Close modal when clicking outside
 document.addEventListener('click', function(event) {
     if (event.target.classList.contains('modal')) {
